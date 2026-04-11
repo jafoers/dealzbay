@@ -10,35 +10,35 @@
   body {
     background: #0a0a0a;
     color: #e8e8e8;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Lucida Console', 'Consolas', 'Courier New', monospace;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 2rem;
+    padding: 3rem 2rem;
   }
 
   .container {
-    max-width: 520px;
+    max-width: 600px;
     width: 100%;
   }
 
   .prompt-line {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 3rem;
+    gap: 0.6rem;
+    margin-bottom: 4rem;
   }
 
   .prompt-symbol {
-    color: #444;
-    font-size: 0.85rem;
+    color: #555;
+    font-size: 1.1rem;
     user-select: none;
   }
 
   .logo {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     font-weight: bold;
     color: #ffffff;
     letter-spacing: 0.05em;
@@ -46,8 +46,8 @@
 
   .cursor {
     display: inline-block;
-    width: 8px;
-    height: 1em;
+    width: 11px;
+    height: 1.1em;
     background: #e8e8e8;
     vertical-align: text-bottom;
     animation: blink 1s step-end infinite;
@@ -58,49 +58,50 @@
   }
 
   .tagline {
-    font-size: 1.05rem;
+    font-size: 1.35rem;
     color: #e8e8e8;
-    line-height: 1.7;
-    margin-bottom: 3rem;
+    line-height: 1.65;
+    margin-bottom: 3.5rem;
   }
 
   .list {
     list-style: none;
-    margin-bottom: 3rem;
+    margin-bottom: 3.5rem;
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 1.1rem;
   }
 
   .list li {
-    font-size: 0.82rem;
+    font-size: 1rem;
     color: #777;
-    padding-left: 1.25rem;
+    padding-left: 1.6rem;
     position: relative;
+    line-height: 1.5;
   }
 
   .list li::before {
     content: '—';
     position: absolute;
     left: 0;
-    color: #333;
+    color: #444;
   }
 
   .list li span {
-    color: #bbb;
+    color: #ccc;
   }
 
   .cta-row {
     display: flex;
-    gap: 0.75rem;
+    gap: 1rem;
     flex-wrap: wrap;
-    margin-bottom: 4rem;
+    margin-bottom: 5rem;
   }
 
   .btn {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 0.85rem;
-    padding: 0.6rem 1.25rem;
+    font-family: 'Lucida Console', 'Consolas', 'Courier New', monospace;
+    font-size: 0.95rem;
+    padding: 0.75rem 1.6rem;
     border: 1px solid #333;
     background: transparent;
     color: #e8e8e8;
@@ -125,21 +126,21 @@
   }
 
   .footer {
-    font-size: 0.7rem;
-    color: #2e2e2e;
+    font-size: 0.82rem;
+    color: #333;
     display: flex;
     justify-content: space-between;
-    border-top: 1px solid #161616;
-    padding-top: 1rem;
+    border-top: 1px solid #1a1a1a;
+    padding-top: 1.25rem;
   }
 
   .footer a {
-    color: #2e2e2e;
+    color: #333;
     text-decoration: none;
   }
 
   .footer a:hover {
-    color: #666;
+    color: #777;
   }
 </style>
 </head>
@@ -158,9 +159,9 @@
 
   <ul class="list">
     <li><span>Echtzeit-Preisscans</span> via eBay API</li>
-    <li><span>GPUs, CPUs, RAM</span> </li>
-    <li><span>konfurierbare Telegram-Alerts</span> </li>
-    <li><span>Statistisch bewertet, gefilterte Angebote</span> nur Signal, kein Spam</li>
+    <li><span>GPUs, CPUs, RAM</span></li>
+    <li><span>konfigurierbare Telegram-Alerts</span></li>
+    <li><span>Statistisch bewertet, gefilterte Angebote</span> — nur Signal, kein Spam</li>
   </ul>
 
   <div class="cta-row">
@@ -170,7 +171,7 @@
 
   <div class="footer">
     <span>dealzbay.de</span>
-    <div style="display:flex;gap:1.5rem;">
+    <div style="display:flex;gap:1.75rem;">
       <a href="/impressum.html">Impressum</a>
       <a href="/datenschutz.html">Datenschutz</a>
     </div>
