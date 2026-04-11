@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>dealzbay — eBay-Deals finden, bevor es jemand anders tut</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #0a0a0a;
+    color: #e8e8e8;
+    font-family: 'Courier New', Courier, monospace;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+
+  .container {
+    max-width: 520px;
+    width: 100%;
+  }
+
+  .prompt-line {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .prompt-symbol {
+    color: #444;
+    font-size: 0.85rem;
+    user-select: none;
+  }
+
+  .logo {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ffffff;
+    letter-spacing: 0.05em;
+  }
+
+  .cursor {
+    display: inline-block;
+    width: 8px;
+    height: 1em;
+    background: #e8e8e8;
+    vertical-align: text-bottom;
+    animation: blink 1s step-end infinite;
+  }
+
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+
+  .tagline {
+    font-size: 1.05rem;
+    color: #e8e8e8;
+    line-height: 1.7;
+    margin-bottom: 3rem;
+  }
+
+  .list {
+    list-style: none;
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .list li {
+    font-size: 0.82rem;
+    color: #777;
+    padding-left: 1.25rem;
+    position: relative;
+  }
+
+  .list li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: #333;
+  }
+
+  .list li span {
+    color: #bbb;
+  }
+
+  .cta-row {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 4rem;
+  }
+
+  .btn {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.85rem;
+    padding: 0.6rem 1.25rem;
+    border: 1px solid #333;
+    background: transparent;
+    color: #e8e8e8;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.15s, border-color 0.15s;
+  }
+
+  .btn:hover {
+    background: #1a1a1a;
+    border-color: #666;
+  }
+
+  .btn-primary {
+    border-color: #e8e8e8;
+  }
+
+  .btn-primary:hover {
+    background: #e8e8e8;
+    color: #0a0a0a;
+  }
+
+  .footer {
+    font-size: 0.7rem;
+    color: #2e2e2e;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #161616;
+    padding-top: 1rem;
+  }
+
+  .footer a {
+    color: #2e2e2e;
+    text-decoration: none;
+  }
+
+  .footer a:hover {
+    color: #666;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="prompt-line">
+    <span class="prompt-symbol">~/</span>
+    <span class="logo">dealzbay</span>
+    <span class="cursor"></span>
+  </div>
+
+  <p class="tagline">
+    eBay-Deals finden,<br>bevor es jemand anders tut.
+  </p>
+
+  <ul class="list">
+    <li><span>Echtzeit-Preisscans</span> via eBay API</li>
+    <li><span>GPUs, CPUs, RAM</span> </li>
+    <li><span>konfurierbare Telegram-Alerts</span> </li>
+    <li><span>Statistisch bewertet, gefilterte Angebote</span> nur Signal, kein Spam</li>
+  </ul>
+
+  <div class="cta-row">
+    <a href="" class="btn btn-primary">Zugang anfragen</a>
+    <a href="" class="btn">Kontakt</a>
+  </div>
+
+  <div class="footer">
+    <span>dealzbay.de</span>
+    <div style="display:flex;gap:1.5rem;">
+      <a href="/impressum.html">Impressum</a>
+      <a href="/datenschutz.html">Datenschutz</a>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
