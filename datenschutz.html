@@ -15,10 +15,57 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 3rem 2rem;
+    padding: 7rem 2rem 3rem;
   }
 
+  /* ── Top nav ─────────────────────────────────────────────────────────── */
+  .topbar {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1.1rem 2rem;
+    gap: 1.5rem;
+    z-index: 100;
+    background: linear-gradient(to bottom, rgba(10,10,10,0.96) 65%, transparent);
+  }
+
+  .topbar-links {
+    display: flex;
+    gap: 1.4rem;
+    align-items: center;
+  }
+
+  .topbar a {
+    font-size: 0.78rem;
+    color: #444;
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    transition: color 0.12s;
+  }
+
+  .topbar a:hover { color: #888; }
+
+  .lang-sep { color: #222; font-size: 0.78rem; }
+
+  .lang-btn {
+    font-size: 1.05rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    opacity: 0.35;
+    padding: 0;
+    line-height: 1;
+    transition: opacity 0.12s;
+  }
+
+  .lang-btn:hover { opacity: 0.75; }
+  .lang-btn.active { opacity: 1; }
+
+  /* ── Content ─────────────────────────────────────────────────────────── */
   .container {
     max-width: 600px;
     width: 100%;
@@ -76,31 +123,36 @@
     text-decoration: none;
   }
 
-  .block a:hover {
-    color: #e8e8e8;
-  }
+  .block a:hover { color: #e8e8e8; }
 
   .footer {
     font-size: 0.82rem;
-    color: #333;
+    color: #2e2e2e;
     display: flex;
     justify-content: space-between;
-    border-top: 1px solid #1a1a1a;
+    border-top: 1px solid #161616;
     padding-top: 1.25rem;
     margin-top: 4rem;
   }
 
-  .footer a {
-    color: #333;
-    text-decoration: none;
-  }
-
-  .footer a:hover {
-    color: #777;
-  }
+  .footer a { color: #2e2e2e; text-decoration: none; transition: color 0.12s; }
+  .footer a:hover { color: #666; }
 </style>
 </head>
 <body>
+
+<nav class="topbar">
+  <div class="topbar-links">
+    <a href="/impressum.html" data-de="Impressum" data-en="Legal Notice">Impressum</a>
+    <a href="/datenschutz.html" data-de="Datenschutz" data-en="Privacy">Datenschutz</a>
+  </div>
+  <span class="lang-sep">|</span>
+  <div style="display:flex;gap:0.4rem;align-items:center;">
+    <button class="lang-btn active" id="btn-de" onclick="setLang('de')" title="Deutsch">🇩🇪</button>
+    <button class="lang-btn" id="btn-en" onclick="setLang('en')" title="English">🇬🇧</button>
+  </div>
+</nav>
+
 <div class="container">
 
   <div class="prompt-line">
@@ -113,7 +165,7 @@
   <div class="block">
     <div class="block-label">Grundsatz</div>
     <p>
-      Der Schutz Ihrer persönlichen Daten ist uns wichtig.
+      Der Schutz deiner persönlichen Daten ist uns wichtig.
       Diese Seite erhebt keine personenbezogenen Daten,
       setzt keine Cookies und verwendet kein Tracking.
     </p>
@@ -125,7 +177,7 @@
       Diese Website wird über GitHub Pages (GitHub, Inc., 88 Colin P Kelly Jr St,
       San Francisco, CA 94107, USA) bereitgestellt. Beim Aufruf der Seite werden
       durch GitHub technische Zugriffsdaten (z. B. IP-Adresse, Zeitstempel)
-      serverseitig protokolliert. Weitere Informationen finden Sie in der
+      serverseitig protokolliert. Weitere Informationen findest du in der
       <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">Datenschutzerklärung von GitHub</a>.
     </p>
   </div>
@@ -133,9 +185,9 @@
   <div class="block">
     <div class="block-label">Kontaktaufnahme</div>
     <p>
-      Wenn Sie uns per E-Mail kontaktieren, werden die übermittelten Daten
+      Wenn du uns per E-Mail kontaktierst, werden die übermittelten Daten
       (E-Mail-Adresse, Nachrichteninhalt) ausschließlich zur Bearbeitung
-      Ihrer Anfrage verwendet und nicht an Dritte weitergegeben.
+      deiner Anfrage verwendet und nicht an Dritte weitergegeben.
     </p>
   </div>
 
@@ -149,35 +201,35 @@
   </div>
 
   <div class="block">
-    <div class="block-label">Affiliate-Links</div>
+    <div class="block-label">Deine Rechte</div>
     <p>
-      Diese Website nimmt am eBay Partner Network teil. Beim Klick auf
-      gekennzeichnete Links werden Sie zu eBay weitergeleitet. eBay kann
-      dabei Daten gemäß seiner eigenen
-      <a href="https://www.ebay.de/help/policies/member-behaviour-policies/datenschutzerklarung?id=4260" target="_blank" rel="noopener">Datenschutzerklärung</a>
-      verarbeiten. Wir erhalten eine Provision bei Kauf — für Sie entstehen
-      keine Mehrkosten.
-    </p>
-  </div>
-
-  <div class="block">
-    <div class="block-label">Ihre Rechte</div>
-    <p>
-      Sie haben das Recht auf Auskunft, Berichtigung, Löschung und
-      Einschränkung der Verarbeitung Ihrer Daten sowie auf
+      Du hast das Recht auf Auskunft, Berichtigung, Löschung und
+      Einschränkung der Verarbeitung deiner Daten sowie auf
       Datenübertragbarkeit. Kontakt:
       <a href="mailto:info@dealzbay.de">info@dealzbay.de</a>
     </p>
   </div>
 
   <div class="footer">
-    <a href="/">← zurück</a>
+    <a href="/" data-de="← zurück" data-en="← back">← zurück</a>
     <div style="display:flex;gap:1.75rem;">
-      <a href="/impressum.html">Impressum</a>
-      <a href="/datenschutz.html">Datenschutz</a>
+      <a href="/impressum.html" data-de="Impressum" data-en="Legal Notice">Impressum</a>
+      <a href="/datenschutz.html" data-de="Datenschutz" data-en="Privacy">Datenschutz</a>
     </div>
   </div>
 
 </div>
+
+<script>
+function setLang(lang) {
+  document.documentElement.lang = lang;
+  document.getElementById('btn-de').classList.toggle('active', lang === 'de');
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  document.querySelectorAll('[data-' + lang + ']').forEach(el => {
+    el.innerHTML = el.getAttribute('data-' + lang);
+  });
+}
+</script>
+
 </body>
 </html>

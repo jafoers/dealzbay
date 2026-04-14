@@ -15,20 +15,72 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 3rem 2rem;
   }
 
-  .container {
+  /* ── Top nav ─────────────────────────────────────────────────────────── */
+  .topbar {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1.1rem 2rem;
+    gap: 1.5rem;
+    z-index: 100;
+    background: linear-gradient(to bottom, rgba(10,10,10,0.96) 65%, transparent);
+  }
+
+  .topbar-links {
+    display: flex;
+    gap: 1.4rem;
+    align-items: center;
+  }
+
+  .topbar a {
+    font-size: 0.78rem;
+    color: #444;
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    transition: color 0.12s;
+  }
+
+  .topbar a:hover { color: #888; }
+
+  .lang-sep { color: #222; font-size: 0.78rem; }
+
+  .lang-btn {
+    font-size: 1.05rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    opacity: 0.35;
+    padding: 0;
+    line-height: 1;
+    transition: opacity 0.12s;
+  }
+
+  .lang-btn:hover { opacity: 0.75; }
+  .lang-btn.active { opacity: 1; }
+
+  /* ── Hero ────────────────────────────────────────────────────────────── */
+  .hero {
     max-width: 600px;
     width: 100%;
+    padding: 2rem 2rem 3.5rem;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .prompt-line {
     display: flex;
     align-items: center;
     gap: 0.6rem;
-    margin-bottom: 4rem;
+    margin-bottom: 2.25rem;
   }
 
   .prompt-symbol {
@@ -45,14 +97,6 @@
     text-decoration: none;
   }
 
-  h1 {
-    font-size: 1rem;
-    color: #bbb;
-    font-weight: normal;
-    margin-bottom: 3rem;
-    letter-spacing: 0.06em;
-  }
-
   .cursor {
     display: inline-block;
     width: 11px;
@@ -62,49 +106,46 @@
     animation: blink 1s step-end infinite;
   }
 
-  @keyframes blink {
-    50% { opacity: 0; }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.28rem;
+    animation: hint-fade 2.5s ease-in-out infinite alternate;
   }
+
+  .scroll-hint span {
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-right: 1px solid #888;
+    border-bottom: 1px solid #888;
+    transform: rotate(45deg);
+  }
+
+  .scroll-hint span:nth-child(1) { opacity: 1; }
+  .scroll-hint span:nth-child(2) { opacity: 0.55; }
+  .scroll-hint span:nth-child(3) { opacity: 0.25; }
+
+  @keyframes hint-fade { from { opacity: 0.45; } to { opacity: 0.9; } }
 
   .tagline {
     font-size: 1.35rem;
     color: #e8e8e8;
     line-height: 1.65;
-    margin-bottom: 3.5rem;
-  }
-
-  .list {
-    list-style: none;
-    margin-bottom: 3.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.1rem;
-  }
-
-  .list li {
-    font-size: 1rem;
-    color: #777;
-    padding-left: 1.6rem;
-    position: relative;
-    line-height: 1.5;
-  }
-
-  .list li::before {
-    content: '—';
-    position: absolute;
-    left: 0;
-    color: #444;
-  }
-
-  .list li span {
-    color: #ccc;
+    margin-bottom: 2.75rem;
   }
 
   .cta-row {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
-    margin-bottom: 2rem;
   }
 
   .btn {
@@ -120,74 +161,257 @@
     transition: background 0.15s, border-color 0.15s;
   }
 
-  .btn:hover {
-    background: #1a1a1a;
-    border-color: #666;
+  .btn:hover { background: #1a1a1a; border-color: #666; }
+  .btn-primary { border-color: #e8e8e8; }
+  .btn-primary:hover { background: #e8e8e8; color: #0a0a0a; }
+
+  /* ── Examples ────────────────────────────────────────────────────────── */
+  .examples-section {
+    width: min(1160px, 100%);
+    padding: 4rem 2rem 4rem;
+    box-sizing: border-box;
   }
 
-  .btn-primary {
-    border-color: #e8e8e8;
+  .section-label {
+    font-size: 0.88rem;
+    color: #888;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 1.75rem;
+    text-align: center;
   }
 
-  .btn-primary:hover {
-    background: #e8e8e8;
-    color: #0a0a0a;
+  .examples-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 0.5rem;
+    align-items: start;
+  }
+
+  .example-cell {
+    padding: 0 1.75rem;
+  }
+
+  .example-cell--sep {
+    border-left: 1px solid #1c1c1c;
+  }
+
+  .tg-bubble {
+    background: #1e1e2e;
+    border: 1px solid #2a2a3a;
+    border-radius: 2px 10px 10px 10px;
+    padding: 0.75rem 0.9rem;
+    font-size: 0.78rem;
+    line-height: 1.65;
+    color: #ccccdd;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  .tg-bubble .tg-bold { color: #ffffff; font-weight: bold; }
+  .tg-bubble .tg-link { color: #5090e8; text-decoration: none; }
+  .tg-bubble .tg-drop { color: #e8a020; }
+
+  .example-img {
+    width: 100%;
+    display: block;
+    border-radius: 3px;
+  }
+
+  /* ── Wie es funktioniert ─────────────────────────────────────────────── */
+  .how-section {
+    width: min(860px, 100%);
+    padding: 4rem 2rem 5.5rem;
+    box-sizing: border-box;
+  }
+
+  .how-steps {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem 4rem;
+  }
+
+  .how-step {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+
+  .how-step-num {
+    font-size: 0.7rem;
+    color: #2e2e2e;
+    letter-spacing: 0.12em;
+    margin-bottom: 0.1rem;
+  }
+
+  .how-step-title {
+    font-size: 0.95rem;
+    color: #ccc;
+  }
+
+  .how-step-desc {
+    font-size: 0.82rem;
+    color: #555;
+    line-height: 1.65;
+  }
+
+  /* ── Footer ──────────────────────────────────────────────────────────── */
+  .footer-wrap {
+    max-width: 600px;
+    width: 100%;
+    padding: 0 2rem 2.5rem;
   }
 
   .footer {
     font-size: 0.82rem;
-    color: #333;
+    color: #2e2e2e;
     display: flex;
     justify-content: space-between;
-    border-top: 1px solid #1a1a1a;
+    border-top: 1px solid #161616;
     padding-top: 1.25rem;
   }
 
-  .footer a {
-    color: #333;
-    text-decoration: none;
-  }
-
-  .footer a:hover {
-    color: #777;
-  }
+  .footer a { color: #2e2e2e; text-decoration: none; transition: color 0.12s; }
+  .footer a:hover { color: #666; }
 </style>
 </head>
 <body>
-<div class="container">
 
+<!-- ── Top nav ─────────────────────────────────────────────────────────── -->
+<nav class="topbar">
+  <div class="topbar-links">
+    <a href="/impressum.html" data-de="Impressum" data-en="Legal Notice">Impressum</a>
+    <a href="/datenschutz.html" data-de="Datenschutz" data-en="Privacy">Datenschutz</a>
+  </div>
+  <span class="lang-sep">|</span>
+  <div style="display:flex;gap:0.4rem;align-items:center;">
+    <button class="lang-btn active" id="btn-de" onclick="setLang('de')" title="Deutsch">🇩🇪</button>
+    <button class="lang-btn" id="btn-en" onclick="setLang('en')" title="English">🇬🇧</button>
+  </div>
+</nav>
+
+<!-- ── Hero ───────────────────────────────────────────────────────────── -->
+<div class="hero">
   <div class="prompt-line">
     <span class="prompt-symbol">~/</span>
     <a href="/" class="logo">dealzbay</a>
     <span class="cursor"></span>
   </div>
 
-  <h1>Startseite</h1>
-
   <p class="tagline">
-    eBay-Deals finden,<br>bevor es jemand anders tut.
+    <span data-de="eBay-Deals finden,<br>bevor es jemand anders tut." data-en="Find eBay deals<br>before anyone else does.">eBay-Deals finden,<br>bevor es jemand anders tut.</span>
   </p>
 
-  <ul class="list">
-    <li><span>Echtzeit-Preisscans</span> via eBay API</li>
-    <li><span>GPUs, CPUs, RAM</span></li>
-    <li><span>konfigurierbare Telegram-Alerts</span></li>
-    <li><span>Statistisch bewertet, gefilterte Angebote</span> — nur Signal, kein Spam</li>
-  </ul>
-
   <div class="cta-row">
-    <a href="" class="btn btn-primary">Zugang anfragen</a>
-    <a href="" class="btn">Kontakt</a>
+    <a href="" class="btn btn-primary" data-de="Zugang anfragen" data-en="Request access">Zugang anfragen</a>
+    <a href="" class="btn" data-de="Kontakt" data-en="Contact">Kontakt</a>
   </div>
 
+  <div class="scroll-hint" aria-hidden="true"><span></span><span></span><span></span></div>
+</div>
+
+<!-- ── Example alerts ─────────────────────────────────────────────────── -->
+<div class="examples-section">
+  <p class="section-label" data-de="Beispiel-Alerts  (April 2026)" data-en="Example alerts  (April 2026)">Beispiel-Alerts (April 2026)</p>
+  <div class="examples-grid">
+
+    <!-- Row 1: message bubbles -->
+    <div class="example-cell">
+      <div class="tg-bubble">🔥 <span class="tg-bold">32GB DDR5 6000 Kit</span> €275 — 13.8% unterm Marktpreis (€45 Rabatt)
+<span class="tg-drop">Ähnliches Angebot: €285 — nach 6 Tagen verkauft</span>
+Durchschnitt: €319 | Median: €320 | n=68
+<a class="tg-link" href="#">ebay.de/itm/…</a></div>
+    </div>
+    <div class="example-cell example-cell--sep">
+      <div class="tg-bubble">🔥 <span class="tg-bold">Ryzen 5 5600X</span> €102 — 21.5% unterm Marktpreis (€28 Rabatt)
+<span class="tg-drop">Preis gefallen von €118 (−€16)</span>
+Durchschnitt: €130 | Median: €130 | n=46
+<a class="tg-link" href="#">ebay.de/itm/…</a></div>
+    </div>
+    <div class="example-cell example-cell--sep">
+      <div class="tg-bubble">🔥 <span class="tg-bold">RTX 4070 Ti</span> €466 — 16.7% unterm Marktpreis (€94 Rabatt)
+Durchschnitt: €560 | Median: €560 | n=34
+<a class="tg-link" href="#">ebay.de/itm/…</a></div>
+    </div>
+
+    <!-- Row 2: histograms -->
+    <div class="example-cell">
+      <img class="example-img" src="example_hist1.png" alt="Histogramm 32GB DDR5 6000 Kit">
+    </div>
+    <div class="example-cell example-cell--sep">
+      <img class="example-img" src="example_hist3.png" alt="Histogramm Ryzen 5 5600X">
+    </div>
+    <div class="example-cell example-cell--sep">
+      <img class="example-img" src="example_hist2.png" alt="Histogramm RTX 4070 Ti">
+    </div>
+
+    <!-- Row 3: trend charts -->
+    <div class="example-cell">
+      <img class="example-img" src="example_trend1.png" alt="Preistrend 32GB DDR5 6000 Kit">
+    </div>
+    <div class="example-cell example-cell--sep">
+      <img class="example-img" src="example_trend3.png" alt="Preistrend Ryzen 5 5600X">
+    </div>
+    <div class="example-cell example-cell--sep">
+      <img class="example-img" src="example_trend2.png" alt="Preistrend RTX 4070 Ti">
+    </div>
+
+  </div>
+</div>
+
+<!-- ── Wie es funktioniert ────────────────────────────────────────────── -->
+<div class="how-section">
+  <p class="section-label" data-de="Wie es funktioniert" data-en="How it works">Wie es funktioniert</p>
+  <div class="how-steps">
+
+    <div class="how-step">
+      <span class="how-step-num">01</span>
+      <span class="how-step-title" data-de="Echtzeit-Scans" data-en="Real-time scans">Echtzeit-Scans</span>
+      <span class="how-step-desc" data-de="dealzbay zieht laufend aktive Angebote für GPUs, CPUs und RAM über die eBay Browse API — vollautomatisch." data-en="dealzbay continuously pulls active listings for GPUs, CPUs, and RAM via the eBay Browse API — fully automated.">dealzbay zieht laufend aktive Angebote für GPUs, CPUs und RAM über die eBay Browse API — vollautomatisch.</span>
+    </div>
+
+    <div class="how-step">
+      <span class="how-step-num">02</span>
+      <span class="how-step-title" data-de="Statistische Bewertung" data-en="Statistical scoring">Statistische Bewertung</span>
+      <span class="how-step-desc" data-de="Zubehör und Defekte werden herausgefiltert. Jedes Angebot wird gegen 30-Tage-Verkaufsdaten bewertet — nur echte Ausreißer kommen durch." data-en="Accessories and defects are filtered out. Every listing is scored against 30-day sold-price data — only genuine outliers get through.">Zubehör und Defekte werden herausgefiltert. Jedes Angebot wird gegen 30-Tage-Verkaufsdaten bewertet — nur echte Ausreißer kommen durch.</span>
+    </div>
+
+    <div class="how-step">
+      <span class="how-step-num">03</span>
+      <span class="how-step-title" data-de="Instant Alert" data-en="Instant Alert">Instant Alert</span>
+      <span class="how-step-desc" data-de="Du erhältst eine Telegram-Nachricht mit Preis, Rabatt und Marktübersicht — direkt wenn ein Deal erscheint." data-en="You get a Telegram message with price, discount, and market overview — the moment a deal appears.">Du erhältst eine Telegram-Nachricht mit Preis, Rabatt und Marktübersicht — direkt wenn ein Deal erscheint.</span>
+    </div>
+
+    <div class="how-step">
+      <span class="how-step-num">04</span>
+      <span class="how-step-title" data-de="Konfigurierbar" data-en="Configurable">Konfigurierbar</span>
+      <span class="how-step-desc" data-de="Deine Preisgrenze, deine Regeln. Nur Deals, die deine Schwelle unterschreiten, landen bei dir." data-en="Your threshold, your rules. Only deals that beat your limit land in your chat.">Deine Preisgrenze, deine Regeln. Nur Deals, die deine Schwelle unterschreiten, landen bei dir.</span>
+    </div>
+
+  </div>
+</div>
+
+<!-- ── Footer ─────────────────────────────────────────────────────────── -->
+<div class="footer-wrap">
   <div class="footer">
     <span>dealzbay.de</span>
     <div style="display:flex;gap:1.75rem;">
-      <a href="/impressum.html">Impressum</a>
-      <a href="/datenschutz.html">Datenschutz</a>
+      <a href="/impressum.html" data-de="Impressum" data-en="Legal Notice">Impressum</a>
+      <a href="/datenschutz.html" data-de="Datenschutz" data-en="Privacy">Datenschutz</a>
     </div>
   </div>
-
 </div>
+
+<script>
+function setLang(lang) {
+  document.documentElement.lang = lang;
+  document.getElementById('btn-de').classList.toggle('active', lang === 'de');
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  document.querySelectorAll('[data-' + lang + ']').forEach(el => {
+    el.innerHTML = el.getAttribute('data-' + lang);
+  });
+}
+</script>
+
 </body>
 </html>
