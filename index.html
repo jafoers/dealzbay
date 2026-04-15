@@ -193,7 +193,7 @@
   }
 
   .section-label {
-    font-size: 0.88rem;
+    font-size: 0.95rem;
     color: #888;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -251,6 +251,7 @@
   /* ── Wie es funktioniert ─────────────────────────────────────────────── */
   .how-section .section-label {
     margin-bottom: 2rem;
+    font-size: 1.05rem;
   }
 
   .how-section {
@@ -287,6 +288,132 @@
     font-size: 0.82rem;
     color: #555;
     line-height: 1.65;
+  }
+
+  .hist-explainer {
+    font-size: 0.82rem;
+    color: #999;
+    line-height: 1.65;
+    padding: 0.75rem 1.2rem;
+    border: 1px solid #2a2a2a;
+    text-align: center;
+    max-width: 480px;
+  }
+
+  .hist-explainer--prominent {
+    color: #bbb;
+    border-color: #3a3a3a;
+    background: #141414;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+    letter-spacing: 0.01em;
+  }
+
+  /* ── Setup section ────────────────────────────────────────────────────── */
+  .setup-section {
+    width: min(860px, 100%);
+    padding: 3rem 2rem 4.5rem;
+    box-sizing: border-box;
+  }
+
+  .setup-section .section-label {
+    margin-bottom: 2rem;
+    font-size: 1.05rem;
+  }
+
+  .setup-block {
+    margin-bottom: 2.5rem;
+  }
+
+  .setup-block:last-child { margin-bottom: 0; }
+
+  .setup-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  .setup-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.2rem;
+  }
+
+  .setup-row .setup-cmd {
+    min-width: 230px;
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+
+  .setup-row-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .setup-row-desc {
+    font-size: 0.85rem;
+    color: #888;
+    line-height: 1.5;
+    padding-top: 0.35rem;
+  }
+
+  .setup-cmd {
+    font-family: 'Lucida Console', 'Consolas', 'Courier New', monospace;
+    font-size: 0.85rem;
+    color: #e8e8e8;
+    background: #111;
+    border: 1px solid #222;
+    padding: 0.55rem 0.9rem;
+    display: inline-block;
+    margin-bottom: 0.45rem;
+  }
+
+  .setup-block-title {
+    font-size: 0.95rem;
+    color: #ccc;
+    margin-bottom: 0.35rem;
+  }
+
+  .setup-block-desc {
+    font-size: 0.82rem;
+    color: #555;
+    line-height: 1.65;
+  }
+
+  .setup-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.4rem;
+    font-size: 0.82rem;
+  }
+
+  .setup-table th {
+    color: #666;
+    font-weight: normal;
+    text-align: left;
+    padding: 0.3rem 0.6rem 0.3rem 0;
+    border-bottom: 1px solid #1c1c1c;
+  }
+
+  .setup-table td {
+    color: #555;
+    padding: 0.25rem 0.4rem 0.25rem 0;
+    border-bottom: 1px solid #161616;
+    font-size: 0.82rem;
+  }
+
+  .setup-table tr:first-child td {
+    padding-top: 0;
+  }
+
+  .setup-row .setup-table td:first-child {
+    color: #e8e8e8;
+    font-family: 'Lucida Console', 'Consolas', 'Courier New', monospace;
+    width: 56px;
   }
 
   /* ── Footer ──────────────────────────────────────────────────────────── */
@@ -455,13 +582,13 @@
     <!-- Row 1: message bubbles -->
     <div class="example-cell">
       <div class="tg-bubble" data-de="🔥 <span class=&quot;tg-bold&quot;>32GB DDR5 6000 Kit</span> €275 — 13.8% unterm Marktpreis (€45 Rabatt)
-<span class=&quot;tg-drop&quot;>Ähnliches Angebot: €285 — nach 6 Tagen verkauft</span>
+<span class=&quot;tg-drop&quot;>Ähnliches Angebot: €285 — nach 2 Tagen verkauft</span>
 Durchschnitt: €319 | Median: €320 | n=68
 <a class=&quot;tg-link&quot; href=&quot;#&quot;>ebay.de/itm/…</a>" data-en="🔥 <span class=&quot;tg-bold&quot;>32GB DDR5 6000 Kit</span> €275 — 13.8% below market price (€45 discount)
-<span class=&quot;tg-drop&quot;>Similar listing: €285 — sold after 6 days</span>
+<span class=&quot;tg-drop&quot;>Similar listing: €285 — sold after 2 days</span>
 Average: €319 | Median: €320 | n=68
 <a class=&quot;tg-link&quot; href=&quot;#&quot;>ebay.de/itm/…</a>">🔥 <span class="tg-bold">32GB DDR5 6000 Kit</span> €275 — 13.8% unterm Marktpreis (€45 Rabatt)
-<span class="tg-drop">Ähnliches Angebot: €285 — nach 6 Tagen verkauft</span>
+<span class="tg-drop">Ähnliches Angebot: €285 — nach 2 Tagen verkauft</span>
 Durchschnitt: €319 | Median: €320 | n=68
 <a class="tg-link" href="#">ebay.de/itm/…</a></div>
     </div>
@@ -486,12 +613,9 @@ Durchschnitt: €560 | Median: €560 | n=34
       <img class="example-img" src="example_hist2.png" alt="Histogramm RTX 4070 Ti">
     </div>
 
-    <!-- Row 3: trend charts -->
-    <div class="example-cell">
-      <img class="example-img" src="example_trend1.png" alt="Preistrend 32GB DDR5 6000 Kit">
-    </div>
-    <div class="example-cell example-cell--sep">
-      <img class="example-img" src="example_trend2.png" alt="Preistrend RTX 4070 Ti">
+    <!-- Row 3: histogram explainer — spans full width -->
+    <div style="grid-column: 1 / -1; display: flex; justify-content: center; padding-top: 0.5rem;">
+      <div class="hist-explainer hist-explainer--prominent" data-de="Das Histogramm zeigt die Verteilung vergangener Verkaufspreise. Die rote Linie markiert den Preis des Deals. Je weiter links, desto besser der Deal." data-en="The histogram shows past sale price distribution — the red line marks this listing's price. The further left, the cheaper relative to history.">Das Histogramm zeigt die Verteilung vergangener Verkaufspreise. Die rote Linie markiert den Preis des Deals. Je weiter links, desto besser der Deal.</div>
     </div>
 
   </div>
@@ -524,6 +648,58 @@ Durchschnitt: €560 | Median: €560 | n=34
       <span class="how-step-num">04</span>
       <span class="how-step-title" data-de="Konfigurierbar" data-en="Configurable">Konfigurierbar</span>
       <span class="how-step-desc" data-de="Du bestimmst, welche Hardware dich interessiert und wie viel Rabatt ein Angebot braucht, um dich zu erreichen. Dein Katalog, deine Schwelle." data-en="You choose which hardware you care about, and how much of a discount it takes to reach you. Your catalogue, your threshold.">Du bestimmst, welche Hardware dich interessiert und wie viel Rabatt ein Angebot braucht, um dich zu erreichen. Dein Katalog, deine Schwelle.</span>
+    </div>
+
+  </div>
+</div>
+
+<!-- ── Einrichtung ──────────────────────────────────────────────────────── -->
+<div class="setup-section">
+  <p class="section-label" data-de="Einrichtung" data-en="Setup">Einrichtung</p>
+
+  <div class="setup-rows">
+
+    <div class="setup-row">
+      <span class="setup-cmd">/start</span>
+      <span class="setup-row-desc" data-de="Startet den Bot und öffnet dein Profil." data-en="Starts the bot and opens your profile.">Startet den Bot und öffnet dein Profil.</span>
+    </div>
+
+    <div class="setup-row">
+      <span class="setup-cmd">/katalog</span>
+      <span class="setup-row-desc" data-de="Wähle die Artikel, die du überwachen willst." data-en="Choose the items you want to monitor.">Wähle die Artikel, die du überwachen willst.</span>
+    </div>
+
+    <div class="setup-row">
+      <span class="setup-cmd">/preisgrenze</span>
+      <div class="setup-row-content">
+        <span class="setup-row-desc" data-de="Legt die Preisschwelle fest — nach Perzentil." data-en="Sets the price threshold — by percentile.">Legt die Preisschwelle fest — nach Perzentil.</span>
+        <table class="setup-table" style="margin-top: 0.6rem;">
+          <tr>
+            <td>1%</td>
+            <td data-de="Ausnahme-Deal" data-en="Exceptional deal">Ausnahme-Deal</td>
+          </tr>
+          <tr>
+            <td>5–10%</td>
+            <td data-de="Sehr guter Preis" data-en="Very good price">Sehr guter Preis</td>
+          </tr>
+          <tr>
+            <td>20–30%</td>
+            <td data-de="Unter dem Durchschnitt" data-en="Below average">Unter dem Durchschnitt</td>
+          </tr>
+          <tr>
+            <td>50%</td>
+            <td data-de="Marktpreis" data-en="Market price">Marktpreis</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="setup-row">
+      <span class="setup-cmd">/trendline RTX 4070 Ti</span>
+      <div class="setup-row-content" style="align-items: center;">
+        <span class="setup-row-desc" data-de="Preisverlauf der letzten 90 Tage." data-en="Price history of the last 90 days.">Preisverlauf der letzten 90 Tage.</span>
+        <img class="example-img" src="example_trend2.png" alt="Trendline RTX 4070 Ti" style="width: 300px; margin: 0.6rem auto 0; border-radius: 3px; display: block;">
+      </div>
     </div>
 
   </div>
