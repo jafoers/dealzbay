@@ -215,14 +215,23 @@
     column-gap: 3rem;
     row-gap: 0.5rem;
     align-items: start;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .examples-grid::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    background: #1c1c1c;
   }
 
   .example-cell {
     padding: 0;
-  }
-
-  .example-cell--sep {
-    border-left: 1px solid #1c1c1c;
   }
 
   .tg-bubble {
@@ -576,45 +585,19 @@
 <!-- ── Example alerts ─────────────────────────────────────────────────── -->
 <div class="examples-section">
   <p class="section-label" data-de="Beispiel-Alerts  (April 2026)" data-en="Example alerts  (April 2026)">Beispiel-Alerts (April 2026)</p>
-  <p class="section-framing" data-de="So sehen echte Alerts aus — mit dem Preis, den du vermieden hättest." data-en="This is what a real alert looks like — including what you would have overpaid.">So sehen echte Alerts aus — mit dem Preis, den du vermieden hättest.</p>
+  <p class="section-framing" data-de="So sehen echte Alerts aus." data-en="This is what a real alert looks like.">So sehen echte Alerts aus.</p>
   <div class="examples-grid">
 
-    <!-- Row 1: message bubbles -->
-    <div class="example-cell">
-      <div class="tg-bubble" data-de="🔥 <span class=&quot;tg-bold&quot;>32GB DDR5 6000 Kit</span> €275 — 13.8% unterm Marktpreis (€45 Rabatt)
-<span class=&quot;tg-drop&quot;>Ähnliches Angebot: €285 — nach 2 Tagen verkauft</span>
-Durchschnitt: €319 | Median: €320 | n=68
-<a class=&quot;tg-link&quot; href=&quot;#&quot;>ebay.de/itm/…</a>" data-en="🔥 <span class=&quot;tg-bold&quot;>32GB DDR5 6000 Kit</span> €275 — 13.8% below market price (€45 discount)
-<span class=&quot;tg-drop&quot;>Similar listing: €285 — sold after 2 days</span>
-Average: €319 | Median: €320 | n=68
-<a class=&quot;tg-link&quot; href=&quot;#&quot;>ebay.de/itm/…</a>">🔥 <span class="tg-bold">32GB DDR5 6000 Kit</span> €275 — 13.8% unterm Marktpreis (€45 Rabatt)
-<span class="tg-drop">Ähnliches Angebot: €285 — nach 2 Tagen verkauft</span>
-Durchschnitt: €319 | Median: €320 | n=68
-<a class="tg-link" href="#">ebay.de/itm/…</a></div>
-    </div>
-    <div class="example-cell example-cell--sep">
-      <div class="tg-bubble" data-de="🔥 <span class=&quot;tg-bold&quot;>RTX 4070 Ti</span> €466 — 16.7% unterm Marktpreis (€94 Rabatt)
-<span class=&quot;tg-drop&quot;>Preis gefallen von €510 (−€44)</span>
-Durchschnitt: €560 | Median: €560 | n=34
-<a class=&quot;tg-link&quot; href=&quot;#&quot;>ebay.de/itm/…</a>" data-en="🔥 <span class=&quot;tg-bold&quot;>RTX 4070 Ti</span> €466 — 16.7% below market price (€94 discount)
-<span class=&quot;tg-drop&quot;>Price dropped from €510 (−€44)</span>
-Average: €560 | Median: €560 | n=34
-<a class=&quot;tg-link&quot; href=&quot;#&quot;>ebay.de/itm/…</a>">🔥 <span class="tg-bold">RTX 4070 Ti</span> €466 — 16.7% unterm Marktpreis (€94 Rabatt)
-<span class="tg-drop">Preis gefallen von €510 (−€44)</span>
-Durchschnitt: €560 | Median: €560 | n=34
-<a class="tg-link" href="#">ebay.de/itm/…</a></div>
-    </div>
-
-    <!-- Row 2: histograms -->
+    <!-- Histograms -->
     <div class="example-cell">
       <img class="example-img" src="example_hist1.png" alt="Histogramm 32GB DDR5 6000 Kit">
     </div>
-    <div class="example-cell example-cell--sep">
+    <div class="example-cell">
       <img class="example-img" src="example_hist2.png" alt="Histogramm RTX 4070 Ti">
     </div>
 
-    <!-- Row 3: histogram explainer — spans full width -->
-    <div style="grid-column: 1 / -1; display: flex; justify-content: center; padding-top: 0.5rem;">
+    <!-- Histogram explainer — spans full width -->
+    <div style="grid-column: 1 / -1; display: flex; justify-content: center; padding-top: 0.5rem; position: relative; z-index: 1; background: #0a0a0a;">
       <div class="hist-explainer hist-explainer--prominent" data-de="Das Histogramm zeigt die Verteilung vergangener Verkaufspreise. Die rote Linie markiert den Preis des Deals. Je weiter links, desto besser der Deal." data-en="The histogram shows past sale price distribution — the red line marks this listing's price. The further left, the cheaper relative to history.">Das Histogramm zeigt die Verteilung vergangener Verkaufspreise. Die rote Linie markiert den Preis des Deals. Je weiter links, desto besser der Deal.</div>
     </div>
 
@@ -666,24 +649,24 @@ Durchschnitt: €560 | Median: €560 | n=34
 
     <div class="setup-row">
       <span class="setup-cmd">/katalog</span>
-      <span class="setup-row-desc" data-de="Wähle die Artikel, die du überwachen willst." data-en="Choose the items you want to monitor.">Wähle die Artikel, die du überwachen willst.</span>
+      <span class="setup-row-desc" data-de="Wähle dein Budget und Artikel, die du überwachen willst." data-en="Choose your budget and the items you want to monitor.">Wähle dein Budget und Artikel, die du überwachen willst.</span>
     </div>
 
     <div class="setup-row">
       <span class="setup-cmd">/preisgrenze</span>
       <div class="setup-row-content">
-        <span class="setup-row-desc" data-de="Legt die Preisschwelle fest — nach Perzentil." data-en="Sets the price threshold — by percentile.">Legt die Preisschwelle fest — nach Perzentil.</span>
+        <span class="setup-row-desc" data-de="Legt deine Deal-Preisschwelle fest — nach Perzentil und Mindestbetrag in €." data-en="Sets your deal price threshold — by percentile and minimum amount in €.">Legt deine Deal-Preisschwelle fest — nach Perzentil und Mindestbetrag in €.</span>
         <table class="setup-table" style="margin-top: 0.6rem;">
           <tr>
             <td>1%</td>
             <td data-de="Ausnahme-Deal" data-en="Exceptional deal">Ausnahme-Deal</td>
           </tr>
           <tr>
-            <td>5–10%</td>
+            <td>5–25%</td>
             <td data-de="Sehr guter Preis" data-en="Very good price">Sehr guter Preis</td>
           </tr>
           <tr>
-            <td>20–30%</td>
+            <td>25–49%</td>
             <td data-de="Unter dem Durchschnitt" data-en="Below average">Unter dem Durchschnitt</td>
           </tr>
           <tr>
@@ -695,7 +678,7 @@ Durchschnitt: €560 | Median: €560 | n=34
     </div>
 
     <div class="setup-row">
-      <span class="setup-cmd">/trendline RTX 4070 Ti</span>
+      <span class="setup-cmd">/trendlinie RTX 4070 Ti</span>
       <div class="setup-row-content" style="align-items: center;">
         <span class="setup-row-desc" data-de="Preisverlauf der letzten 90 Tage." data-en="Price history of the last 90 days.">Preisverlauf der letzten 90 Tage.</span>
         <img class="example-img" src="example_trend2.png" alt="Trendline RTX 4070 Ti" style="width: 300px; margin: 0.6rem auto 0; border-radius: 3px; display: block;">
